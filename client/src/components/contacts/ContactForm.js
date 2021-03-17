@@ -48,7 +48,7 @@ const ContactForm = () => {
   return (
     <form onSubmit={onSubmit}>
       <h2 className='text-primary'>
-        {current ? 'Edit Contact' : 'Add Contact'}
+        {current ? 'Edit Book Details' : 'Add Book'}
       </h2>
       <input
         type='text'
@@ -57,19 +57,21 @@ const ContactForm = () => {
         value={name}
         onChange={onChange}
       />
-      <input
-        type='email'
-        placeholder='Email'
+      <textarea
+        type='textarea'
+        placeholder='Comment'
         name='email'
         value={email}
         onChange={onChange}
       />
       <input
-        type='text'
-        placeholder='Phone'
+        type='number'
+        placeholder='rating out of 5'
         name='phone'
         value={phone}
         onChange={onChange}
+        min="1" max="5"
+        step="0.1"
       />
       <h5>Contact Type</h5>
       <input
@@ -91,7 +93,7 @@ const ContactForm = () => {
       <div>
         <input
           type='submit'
-          value={current ? 'Update Contact' : 'Add Contact'}
+          value={current ? 'Update Book Details' : 'Add Book'}
           className='btn btn-primary btn-block'
         />
       </div>
